@@ -3,7 +3,7 @@ MAINTAINER Loading <dxf351@gmail.com>
 
 RUN echo "deb http://cn.archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get -yq --force-yes install openssh-server openssh-client  mysql-server supervisor
+RUN apt-get -yq --force-yes install openssh-server openssh-client  mysql-server supervisor rsync
 RUN /etc/init.d/mysql start &&\
     mysql -e "grant all privileges on *.* to 'root'@'%' identified by 'root';"&&\
     mysql -e "grant all privileges on *.* to 'root'@'localhost' identified by 'root';"&&\
