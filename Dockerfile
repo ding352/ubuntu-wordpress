@@ -23,11 +23,9 @@ RUN sudo a2enmod rewrite
 
 ##cat add_apache.conf >> /etc/apache2/apache2.conf
 
-RUN echo "LoadModule php5_module /usr/lib/apache2/modules/libphp5.so \
-            AddType application/x-httpd-php .php \
-            AddType application/x-httpd-php-source .phps">>/etc/apache2/apache2.conf
-
-
+RUN echo "LoadModule php5_module /usr/lib/apache2/modules/libphp5.so >> /etc/apache2/apache2.conf
+RUN echo "AddType application/x-httpd-php .php" >> /etc/apache2/apache2.conf
+RUN echo "AddType application/x-httpd-php-source .phps" >> /etc/apache2/apache2.conf
 
 
 
@@ -37,7 +35,8 @@ RUN tar xzvf latest.tar.gz wordpress
 
 RUN cd wordpress
 
-RUN sudo rsync -avz . /var/www/html
+#RUN sudo rsync -avz . /var/www/html
+RUN cp -r wordpress/* /var/www/html
 
 RUN cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 
