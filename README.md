@@ -7,3 +7,7 @@ how to run the wordpress:
 
 docker run -d --name wordpress -p 3306:3306 -p 80:80 loading/wordpress
 
+
+Then open the link on browser:
+
+http://ip/wp-admin
