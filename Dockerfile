@@ -23,7 +23,7 @@ RUN sudo a2enmod rewrite
 
 ##cat add_apache.conf >> /etc/apache2/apache2.conf
 
-RUN echo "LoadModule php5_module /usr/lib/apache2/modules/libphp5.so >> /etc/apache2/apache2.conf
+RUN echo "LoadModule php5_module /usr/lib/apache2/modules/libphp5.so" >> /etc/apache2/apache2.conf
 RUN echo "AddType application/x-httpd-php .php" >> /etc/apache2/apache2.conf
 RUN echo "AddType application/x-httpd-php-source .phps" >> /etc/apache2/apache2.conf
 
