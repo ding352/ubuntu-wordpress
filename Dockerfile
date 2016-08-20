@@ -16,7 +16,7 @@ RUN apt-get install -yq --force-yes apache2  php5 libapache2-mod-php5 php5-gd ph
 
 
 RUN sed -i "s/expose_php\ \=\ On/expose_php\ \=\ Off/g" /etc/php5/apache2/php.ini
-RUN sed -i "s/allow_url_fopen\ \=\ Off/allow_url_fopen\ \=\ On/g" /etc/php5/apache2/php.ini
+RUN sed -i "s/allow_url_fopen\ \=\ On/allow_url_fopen\ \=\ Off/g" /etc/php5/apache2/php.ini
 
 RUN sudo a2enmod rewrite
 
